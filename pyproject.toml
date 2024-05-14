@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "commit-message-check-pre-commit"
-version = "0.2.1"
+version = "0.3.0"
 description = ""
 authors = ["antonio ielo <antonio.ielo@unical.it>"]
 readme = "README.md"
