@@ -1,0 +1,8 @@
+- id: commit-message-check
+  name: Commit Message Check
+  entry: python3 commit_message_check.py
+  language: python
+  always_run: true
+  fail_fast: true
+  description: "Checks if the commit message is compliant with the Conventional Commits specification."
+  stages: [ commit-msg ]
