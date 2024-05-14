@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  dump_ctx:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Dump GitHub context
+      env: { CONTENT: "${{ toJson(github) }}" }
+      run: "echo $CONTENT | jq"
+
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+      name: Checkout Repository
+
+    - name: Install Poetry
+      run: pipx install poetry
+
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+
+    - name: Install Development dependencies
+      run: poetry install --only=dev
+
+    - name: Linting
+      run: poetry run ruff check *.py
+
+    - name: Type-checking
+      run: poetry run mypy *.py --strict
