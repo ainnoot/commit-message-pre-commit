@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "commit-message-check-pre-commit"
-version = "0.3.0"
+version = "0.3.1"
 description = ""
 authors = ["antonio ielo <antonio.ielo@unical.it>"]
 readme = "README.md"
@@ -19,4 +19,4 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-commit_message_check = "commit_message_check_pre_commit.hook:run"
+commit-message-check = "commit_message_check_pre_commit.hook:run"
