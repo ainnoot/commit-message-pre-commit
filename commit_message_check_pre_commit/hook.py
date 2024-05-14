@@ -72,7 +72,7 @@ def validate_match(re_match: Optional[re.Match[str]]) -> Tuple[bool, List[LintEr
     return not violations, violations
 
 
-if __name__ == "__main__":
+def run() -> None:
     if len(sys.argv) != 2:
         print("commit-message-check [git commit temp file]")
         sys.exit(1)

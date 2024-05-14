@@ -32,10 +32,13 @@ jobs:
       run: poetry install --only=dev
 
     - name: Linting
-      run: poetry run ruff check *.py
+      run: poetry run ruff check commit_message_check_pre_commit
 
     - name: Type-checking
-      run: poetry run mypy *.py --strict
+      run: poetry run mypy commit_message_check_pre_commit --strict
+
+    - name: Check the package builds
+      run: poetry build
 
     - name: Run tests
       run: poetry run pytest tests/
