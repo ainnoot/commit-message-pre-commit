@@ -2,7 +2,7 @@ package-mode = false
 
 [tool.poetry]
 name = "commit-message-pre-commit"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["antonio ielo <antonio.ielo@unical.it>"]
 readme = "README.md"
