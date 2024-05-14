@@ -37,5 +37,8 @@ jobs:
     - name: Type-checking
       run: poetry run mypy *.py --strict
 
+    - name: Check the package builds
+      run: poetry build
+
     - name: Run tests
       run: poetry run pytest tests/
