@@ -1,5 +1,5 @@
 import pytest
-from commit_message_check import validate_commit_message
+from commit_message_check_pre_commit.hook import validate_commit_message
 
 
 @pytest.mark.parametrize("type", ("ci", "bump", "chore", "feat", "fix", "test"))
